@@ -3,281 +3,839 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Guía Maestra: Importaciones China a Perú con IA 2026</title>
+  <title>Guía Maestra: Importaciones de China a Perú con IA 2026 | Edición Oficial</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #090d16;
-      --card-bg: #111827;
-      --primary: #10b981;
-      --primary-hover: #059669;
-      --yape: #731e87;
-      --plin: #00bcd4;
-      --text: #f3f4f6;
-      --text-muted: #9ca3af;
-      --border: #1f2937;
+      --bg: #07090e;
+      --card-bg: rgba(15, 23, 42, 0.75);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --accent-emerald: #10b981;
+      --accent-emerald-glow: rgba(16, 185, 129, 0.25);
+      --accent-gold: #f59e0b;
+      --yape-purple: #742284;
+      --yape-cyan: #00d2b5;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
     }
+
     * { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
       background-color: var(--bg);
-      color: var(--text);
-      line-height: 1.5;
-      padding: 20px 10px;
+      background-image: 
+        radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.12) 0%, transparent 50%),
+        radial-gradient(circle at 100% 40%, rgba(116, 34, 132, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 0% 80%, rgba(0, 210, 181, 0.06) 0%, transparent 50%);
+      color: var(--text-main);
+      line-height: 1.6;
+      padding-bottom: 90px;
+      overflow-x: hidden;
     }
-    .container {
-      max-width: 650px;
-      margin: 0 auto;
-    }
-    .banner {
-      background: linear-gradient(90deg, #064e3b, #10b981);
+
+    /* BANNER SUPERIOR CON CONTADOR */
+    .top-banner {
+      background: linear-gradient(90deg, #064e3b, #047857, #10b981);
       color: #fff;
       text-align: center;
-      padding: 10px;
-      font-weight: 700;
+      padding: 10px 15px;
       font-size: 13px;
-      border-radius: 8px;
-      margin-bottom: 20px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      box-shadow: 0 4px 20px rgba(16, 185, 129, 0.3);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
     }
-    .product-card {
+
+    .countdown-timer {
+      background: rgba(0, 0, 0, 0.3);
+      padding: 2px 8px;
+      border-radius: 6px;
+      font-family: monospace;
+      font-size: 14px;
+      color: #fef08a;
+    }
+
+    /* CONTENEDOR PRINCIPAL */
+    .container {
+      max-width: 860px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    /* TRUST BADGES HEADER */
+    .trust-header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 25px;
+      flex-wrap: wrap;
+    }
+
+    .trust-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--card-border);
+      padding: 6px 14px;
+      border-radius: 9999px;
+      font-size: 12px;
+      color: var(--text-muted);
+      backdrop-filter: blur(8px);
+    }
+
+    .trust-pill strong { color: var(--accent-emerald); }
+    .stars { color: #fbbf24; }
+
+    /* TITULAR HERO */
+    .hero-title {
+      font-family: 'Space Grotesk', sans-serif;
+      text-align: center;
+      font-size: clamp(26px, 5vw, 42px);
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+      margin-bottom: 16px;
+      background: linear-gradient(180deg, #ffffff 30%, #94a3b8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subtitle {
+      text-align: center;
+      font-size: clamp(15px, 2.5vw, 18px);
+      color: var(--text-muted);
+      max-width: 680px;
+      margin: 0 auto 35px;
+    }
+
+    /* TARJETA MAESTRA DEL PRODUCTO */
+    .product-showcase {
       background: var(--card-bg);
-      border: 1px solid var(--border);
+      border: 1px solid var(--card-border);
+      border-radius: 24px;
+      padding: clamp(20px, 4vw, 36px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(16px);
+      margin-bottom: 35px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .product-showcase::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      right: -100px;
+      width: 250px;
+      height: 250px;
+      background: radial-gradient(circle, var(--accent-emerald-glow) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    /* GRID VISUAL + BENEFICIOS */
+    .showcase-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+      align-items: center;
+    }
+
+    @media (min-width: 768px) {
+      .showcase-grid {
+        grid-template-columns: 1.05fr 1fr;
+        gap: 40px;
+      }
+    }
+
+    .cover-container {
+      position: relative;
       border-radius: 16px;
       overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      box-shadow: 0 25px 40px -15px rgba(0, 0, 0, 0.8), 0 0 30px var(--accent-emerald-glow);
+      border: 1px solid rgba(16, 185, 129, 0.2);
+      transition: transform 0.4s ease;
     }
+
+    .cover-container:hover {
+      transform: translateY(-4px) scale(1.01);
+    }
+
     .cover-img {
       width: 100%;
       height: auto;
       display: block;
-      border-bottom: 1px solid var(--border);
     }
-    .content {
-      padding: 25px;
+
+    .edition-tag {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #fef08a;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
-    h1 {
-      font-size: 22px;
-      font-weight: 800;
-      margin-bottom: 10px;
-      color: #fff;
+
+    /* PRECIOS Y VALUE STACK */
+    .pricing-box {
+      margin-bottom: 24px;
     }
-    .sub {
-      color: var(--text-muted);
-      font-size: 14px;
-      margin-bottom: 20px;
-    }
-    .price-tag {
+
+    .price-row {
       display: flex;
       align-items: baseline;
       gap: 12px;
-      margin-bottom: 20px;
-      padding-bottom: 15px;
-      border-bottom: 1px solid var(--border);
+      margin-bottom: 8px;
     }
+
     .current-price {
-      font-size: 32px;
-      font-weight: 900;
-      color: var(--primary);
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 38px;
+      font-weight: 800;
+      color: var(--accent-emerald);
+      letter-spacing: -1px;
     }
+
     .old-price {
+      font-size: 20px;
+      color: var(--text-dim);
       text-decoration: line-through;
-      color: #64748b;
-      font-size: 18px;
     }
-    .save-badge {
-      background: rgba(16, 185, 129, 0.2);
-      color: var(--primary);
-      padding: 3px 8px;
-      border-radius: 6px;
+
+    .save-tag {
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: var(--accent-emerald);
       font-size: 12px;
       font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 9999px;
     }
-    .features {
+
+    .price-notice {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    /* LISTA DE BENEFICIOS */
+    .benefits-list {
+      list-style: none;
       margin-bottom: 25px;
     }
-    .feat {
+
+    .benefit-item {
       display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 10px;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 12px;
       font-size: 14px;
+      color: #e2e8f0;
     }
-    .feat-icon {
-      color: var(--primary);
-      font-weight: bold;
-    }
-    .pay-methods {
-      background: #0d131f;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 20px;
-      margin-bottom: 20px;
-    }
-    .tabs {
+
+    .check-icon {
+      width: 20px;
+      height: 20px;
+      background: rgba(16, 185, 129, 0.2);
+      border: 1px solid var(--accent-emerald);
+      border-radius: 50%;
       display: flex;
-      gap: 10px;
-      margin-bottom: 15px;
-    }
-    .tab {
-      flex: 1;
-      padding: 10px;
-      text-align: center;
-      border-radius: 8px;
-      font-weight: 700;
-      cursor: pointer;
-      font-size: 13px;
-      border: 1px solid var(--border);
-      background: #1e293b;
-      color: var(--text-muted);
-    }
-    .tab.active {
-      background: var(--primary);
-      color: #000;
-      border-color: var(--primary);
-    }
-    .qr-container {
-      text-align: center;
-      padding: 15px 0;
-    }
-    .qr-box {
-      width: 170px;
-      height: 170px;
-      background: #fff;
-      border-radius: 12px;
-      margin: 0 auto 15px;
-      display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
-      color: #000;
-      font-weight: bold;
-      border: 3px solid var(--yape);
+      color: var(--accent-emerald);
+      font-size: 12px;
+      font-weight: 900;
+      flex-shrink: 0;
+      margin-top: 2px;
     }
-    .phone-number {
-      font-size: 18px;
-      font-weight: 800;
-      color: #38bdf8;
-      margin: 8px 0;
-      letter-spacing: 1px;
+
+    /* CAJA DE PAGO INTERACTIVA (YAPE VS CARD) */
+    .checkout-hub {
+      background: #090e17;
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 24px;
+      margin-top: 20px;
     }
-    .btn {
-      width: 100%;
-      padding: 16px;
+
+    .tabs {
+      display: flex;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.03);
+      padding: 4px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
+
+    .tab-btn {
+      flex: 1;
+      padding: 12px 10px;
       border-radius: 10px;
       border: none;
-      font-size: 16px;
-      font-weight: 800;
+      background: transparent;
+      color: var(--text-muted);
+      font-family: inherit;
+      font-weight: 700;
+      font-size: 13px;
       cursor: pointer;
-      transition: background 0.2s;
-      text-decoration: none;
-      display: inline-block;
-      text-align: center;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
     }
-    .btn-yape {
-      background: var(--primary);
+
+    .tab-btn.active-yape {
+      background: var(--yape-purple);
+      color: #fff;
+      box-shadow: 0 4px 15px rgba(116, 34, 132, 0.4);
+    }
+
+    .tab-btn.active-card {
+      background: var(--accent-emerald);
+      color: #000;
+      box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+    }
+
+    .tab-content {
+      display: none;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .tab-content.active { display: block; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* PAGO YAPE OFICIAL */
+    .yape-card-container {
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    .qr-frame {
+      max-width: 250px;
+      margin: 0 auto 16px;
+      background: #fff;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 3px solid var(--yape-purple);
+      box-shadow: 0 10px 30px rgba(116, 34, 132, 0.35);
+      transition: transform 0.3s ease;
+    }
+
+    .qr-frame:hover {
+      transform: scale(1.02);
+    }
+
+    .qr-img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .account-details {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px dashed rgba(255, 255, 255, 0.15);
+      border-radius: 12px;
+      padding: 14px;
+      margin-bottom: 20px;
+      display: inline-block;
+      width: 100%;
+      max-width: 380px;
+    }
+
+    .account-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+      font-size: 13px;
+    }
+
+    .account-row:last-child { margin-bottom: 0; }
+
+    .copy-btn {
+      background: rgba(0, 210, 181, 0.15);
+      border: 1px solid var(--yape-cyan);
+      color: var(--yape-cyan);
+      border-radius: 6px;
+      padding: 3px 8px;
+      font-size: 11px;
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    .copy-btn:hover {
+      background: var(--yape-cyan);
       color: #000;
     }
-    .btn-yape:hover {
-      background: var(--primary-hover);
+
+    /* BOTONES DE LLAMADO A LA ACCIÓN */
+    .cta-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 16px 20px;
+      border-radius: 12px;
+      font-family: inherit;
+      font-size: 16px;
+      font-weight: 800;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      border: none;
     }
-    .guarantee {
-      text-align: center;
-      color: var(--text-muted);
+
+    .cta-whatsapp {
+      background: linear-gradient(135deg, #25d366, #128c7e);
+      color: #fff;
+      box-shadow: 0 10px 25px rgba(37, 211, 102, 0.35);
+    }
+
+    .cta-whatsapp:hover {
+      box-shadow: 0 15px 35px rgba(37, 211, 102, 0.5);
+      transform: translateY(-2px);
+    }
+
+    .cta-card {
+      background: linear-gradient(135deg, #10b981, #059669);
+      color: #000;
+      box-shadow: 0 10px 25px rgba(16, 185, 129, 0.35);
+    }
+
+    .cta-card:hover {
+      box-shadow: 0 15px 35px rgba(16, 185, 129, 0.5);
+      transform: translateY(-2px);
+    }
+
+    .step-guide {
       font-size: 12px;
-      margin-top: 15px;
+      color: var(--text-muted);
+      margin-top: 14px;
+      line-height: 1.5;
+    }
+
+    /* TESTIMONIOS Y PRUEBA SOCIAL */
+    .testimonials-section {
+      margin: 45px 0;
+    }
+
+    .section-heading {
+      text-align: center;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 22px;
+      margin-bottom: 25px;
+      color: #f1f5f9;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    @media (min-width: 640px) {
+      .testimonials-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    .testimonial-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 20px;
+    }
+
+    .testimonial-stars { color: #f59e0b; margin-bottom: 8px; font-size: 13px; }
+    .testimonial-text { font-size: 13px; color: var(--text-muted); margin-bottom: 12px; font-style: italic; }
+    .testimonial-author { font-size: 12px; font-weight: 700; color: #cbd5e1; }
+    .testimonial-city { color: var(--text-dim); font-size: 11px; }
+
+    /* FAQ ACCORDION */
+    .faq-section {
+      margin: 40px 0;
+    }
+
+    .faq-item {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      margin-bottom: 10px;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      padding: 16px 20px;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .faq-answer {
+      padding: 0 20px 16px;
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.5;
+      display: none;
+    }
+
+    .faq-item.open .faq-answer { display: block; }
+    .faq-item.open .faq-toggle { transform: rotate(180deg); }
+    .faq-toggle { transition: transform 0.2s ease; }
+
+    /* GARANTÍA */
+    .guarantee-box {
+      text-align: center;
+      background: rgba(16, 185, 129, 0.05);
+      border: 1px solid rgba(16, 185, 129, 0.2);
+      border-radius: 16px;
+      padding: 25px 20px;
+      margin: 30px 0;
+    }
+
+    .guarantee-badge { font-size: 32px; margin-bottom: 8px; }
+    .guarantee-title { font-weight: 800; font-size: 16px; color: var(--accent-emerald); margin-bottom: 6px; }
+    .guarantee-desc { font-size: 13px; color: var(--text-muted); max-width: 520px; margin: 0 auto; }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      font-size: 12px;
+      color: var(--text-dim);
+      padding: 20px;
+      border-top: 1px solid var(--card-border);
+    }
+
+    /* BARRA FLOTANTE MÓVIL */
+    .mobile-sticky-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(10, 14, 23, 0.95);
+      backdrop-filter: blur(16px);
+      border-top: 1px solid var(--card-border);
+      padding: 12px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 999;
+      box-shadow: 0 -10px 25px rgba(0, 0, 0, 0.6);
+    }
+
+    @media (min-width: 768px) {
+      .mobile-sticky-bar { display: none; }
+    }
+
+    .sticky-price {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 800;
+      font-size: 20px;
+      color: var(--accent-emerald);
+    }
+
+    .sticky-sub { font-size: 11px; color: var(--text-dim); }
+
+    .sticky-btn {
+      background: var(--accent-emerald);
+      color: #000;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-weight: 800;
+      font-size: 13px;
+      text-decoration: none;
+      border: none;
     }
   </style>
 </head>
 <body>
 
-<div class="container">
-  <div class="banner">
-    ⚡ OFERTA DE LANZAMIENTO 2026: 70% DE DESCUENTO (SÓLO HOY)
+  <!-- BANNER SUPERIOR CON CONTADOR -->
+  <div class="top-banner">
+    <span>🔥 <strong>PRECIO ESPECIAL LANZAMIENTO:</strong> Ahorra S/ 70 Soles sólo por hoy</span>
+    <span class="countdown-timer" id="timer">14:28</span>
   </div>
 
-  <div class="product-card">
-    <img src="cover_importaciones_peru.png" alt="Guía Importaciones China Perú" class="cover-img">
-    <div class="content">
-      <h1>Guía Maestra: Importaciones de China a Perú con IA & Hacks SUNAT</h1>
-      <p class="sub">El paso a paso definitivo para importar legalmente vía Callao / Courier sin pagar intermediarios ni aranceles sorpresa.</p>
+  <div class="container">
 
-      <div class="price-tag">
-        <span class="current-price">S/ 29.00</span>
-        <span class="old-price">S/ 99.00</span>
-        <span class="save-badge">AHORRAS S/ 70</span>
+    <!-- TRUST BADGES HEADER -->
+    <div class="trust-header">
+      <span class="trust-pill"><span class="stars">★★★★★</span> <strong>4.9 / 5</strong> Calificación</span>
+      <span class="trust-pill">⚡ <strong>Descarga Inmediata</strong> en PDF</span>
+      <span class="trust-pill">🛡️ <strong>Garantía Oficial</strong> 7 Días</span>
+    </div>
+
+    <!-- TITULAR PRINCIPAL -->
+    <h1 class="hero-title">
+      Guía Maestra: Importaciones de China a Perú con IA & Hacks SUNAT 2026
+    </h1>
+    <p class="hero-subtitle">
+      El paso a paso probado para encontrar fabricantes certificados en Alibaba/1688, calcular impuestos aduaneros sin intermediarios y multiplicar tu capital de forma 100% legal.
+    </p>
+
+    <!-- TARJETA DEL PRODUCTO -->
+    <div class="product-showcase" id="compra">
+      <div class="showcase-grid">
+
+        <!-- COLUMNA VISUAL (RENDER 3D CINEMÁTICO) -->
+        <div class="cover-wrapper">
+          <div class="cover-container">
+            <span class="edition-tag">Edición 2026 • 8K Render</span>
+            <img src="cover_importaciones_peru.png" alt="Guía Maestra Importaciones China Perú 2026 Portada 3D" class="cover-img">
+          </div>
+        </div>
+
+        <!-- COLUMNA BENEFICIOS Y PRECIO -->
+        <div class="details-wrapper">
+          <div class="pricing-box">
+            <div class="price-row">
+              <span class="current-price">S/ 29.00</span>
+              <span class="old-price">S/ 99.00</span>
+              <span class="save-tag">AHORRAS 70%</span>
+            </div>
+            <p class="price-notice">Pago único • Acceso de por vida en celular y PC • Sin suscripciones</p>
+          </div>
+
+          <ul class="benefits-list">
+            <li class="benefit-item">
+              <span class="check-icon">✓</span>
+              <span><strong>Filtro Anti-Estafas en Alibaba & 1688:</strong> Prompts de IA para verificar fábricas reales vs. intermediarios en 30 segundos.</span>
+            </li>
+            <li class="benefit-item">
+              <span class="check-icon">✓</span>
+              <span><strong>Calculadora Tributaria SUNAT:</strong> Aprende el régimen exacto para importar sin pagar aranceles en envíos menores a $200 USD.</span>
+            </li>
+            <li class="benefit-item">
+              <span class="check-icon">✓</span>
+              <span><strong>Despacho en el Callao y Courier:</strong> Sin sorpresas de almacenaje extra en Talma, Shopee o DHL.</span>
+            </li>
+            <li class="benefit-item">
+              <span class="check-icon">✓</span>
+              <span><strong>Pack de 50+ Prompts en Chino & Inglés:</strong> Para negociar precios de mayoreo directamente desde tu WhatsApp.</span>
+            </li>
+          </ul>
+        </div>
       </div>
 
-      <div class="features">
-        <div class="feat"><span class="feat-icon">✓</span> Filtrado de proveedores verificados en Alibaba y 1688</div>
-        <div class="feat"><span class="feat-icon">✓</span> Plantilla Excel para cálculo de Ad-Valorem, IGV y Percepciones</div>
-        <div class="feat"><span class="feat-icon">✓</span> Prompts de negociación directa en Chino e Inglés</div>
-        <div class="feat"><span class="feat-icon">✓</span> Acceso inmediato en PDF descargable en tu celular o PC</div>
-      </div>
-
-      <div class="pay-methods">
+      <!-- CAJA DE PAGO (SELECTOR YAPE VS TARJETA) -->
+      <div class="checkout-hub">
         <div class="tabs">
-          <div class="tab active" id="tab-yape">YAPE / PLIN (S/ 29)</div>
-          <div class="tab" id="tab-card">TARJETA / INTERNACIONAL ($8.50)</div>
+          <button class="tab-btn active-yape" id="btn-tab-yape" onclick="switchTab('yape')">
+            🟣 PAGAR CON YAPE / PLIN (S/ 29.00)
+          </button>
+          <button class="tab-btn" id="btn-tab-card" onclick="switchTab('card')">
+            💳 TARJETA O INTERNACIONAL ($8.50 USD)
+          </button>
         </div>
 
-        <!-- VISTA YAPE / PLIN -->
-        <div id="view-yape" class="qr-container">
-          <div class="qr-box">
-            <div style="font-size:24px; color:#731e87; margin-bottom:5px;">📱 YAPE / PLIN</div>
-            <div style="font-size:11px; color:#333;">Escanear o transferir</div>
-            <div style="font-size:18px; color:#000; margin-top:5px; font-weight:900;">S/ 29.00</div>
-          </div>
-          <p style="font-size:13px; color:#9ca3af;">Número de Yape y Plin directo:</p>
-          <div class="phone-number">943 284 107</div>
-          <p style="font-size:13px; color:#38bdf8; font-weight:bold; margin-bottom:5px;">Titular: Peter Chi*</p>
-          <p style="font-size:12px; color:#64748b; margin-bottom:15px;">Envía tu constancia de pago al WhatsApp para soporte o descarga directa:</p>
-          
-          <div style="display:flex; flex-direction:column; gap:10px;">
-            <a href="https://wa.me/51943284107?text=Hola%20Peter,%20acabo%20de%20yapear%20S/%2029%20para%20la%20Guia%20Maestra%20de%20Importaciones%20China-Peru%202026.%20Adjunto%20mi%20constancia." target="_blank" class="btn" style="background:#25d366; color:#fff;">
-              📲 ENVIAR CONSTANCIA POR WHATSAPP (943 284 107)
+        <!-- PANEL YAPE -->
+        <div class="tab-content active" id="content-yape">
+          <div class="yape-card-container">
+            <p style="font-size: 14px; color: #cbd5e1; margin-bottom: 12px; font-weight: 700;">
+              Escanea el código QR oficial desde tu app de Yape o Plin:
+            </p>
+
+            <div class="qr-frame">
+              <img src="qr_yape_oficial.png" alt="Código QR Oficial Yape Peter Chirinos" class="qr-img">
+            </div>
+
+            <div class="account-details">
+              <div class="account-row">
+                <span style="color: var(--text-muted);">Titular:</span>
+                <strong style="color: #fff;">Peter Chi*</strong>
+              </div>
+              <div class="account-row">
+                <span style="color: var(--text-muted);">Número celular:</span>
+                <strong style="color: #38bdf8; font-size: 16px;">943 284 107</strong>
+                <button class="copy-btn" onclick="copyPhone()">Copiar</button>
+              </div>
+              <div class="account-row">
+                <span style="color: var(--text-muted);">Monto exacto:</span>
+                <strong style="color: var(--accent-emerald); font-size: 16px;">S/ 29.00 Soles</strong>
+              </div>
+            </div>
+
+            <a href="https://wa.me/51943284107?text=Hola%20Peter!%20Acabo%20de%20hacer%20el%20Yape%20de%20S/%2029%20para%20la%20Gu%C3%ADa%20Maestra%20de%20Importaciones%20China-Per%C3%BA%202026.%20Aqu%C3%AD%20te%20env%C3%ADo%20mi%20captura%20para%20la%20descarga%20inmediata." target="_blank" class="cta-btn cta-whatsapp">
+              <span>💬 Enviar Constancia por WhatsApp para Descarga Instantánea</span>
             </a>
 
-            <a href="../../Digital_Products/Digital_Downloads/Guia_Importaciones_China_Peru_2026.pdf" download class="btn btn-yape">
-              ⚡ DESCARGAR GUÍA EN PDF INMEDIATAMENTE
-            </a>
+            <p class="step-guide">
+              🔒 Una vez realizado el Yape, dale clic al botón verde de arriba para enviarnos la captura. Nuestro bot de entrega o equipo te enviará el enlace directo del PDF y las plantillas en menos de 2 minutos.
+            </p>
           </div>
         </div>
 
-        <!-- VISTA TARJETA -->
-        <div id="view-card" style="display:none; text-align:center; padding:15px 0;">
-          <p style="font-size:14px; color:#9ca3af; margin-bottom:15px;">Pago seguro en Dólares mediante Gumroad o Stripe:</p>
-          <a href="https://app.gumroad.com" target="_blank" class="btn" style="background:#06b6d4; color:#000;">
-            PAGAR CON TARJETA DE CRÉDITO / DÉBITO ($8.50 USD)
-          </a>
-        </div>
-      </div>
+        <!-- PANEL TARJETA / HOTMART -->
+        <div class="tab-content" id="content-card">
+          <div style="text-align: center; padding: 20px 10px;">
+            <p style="font-size: 15px; color: #cbd5e1; margin-bottom: 16px;">
+              Paga de forma 100% segura con tarjeta de crédito/débito desde cualquier país o Perú:
+            </p>
+            <p style="font-size: 32px; font-weight: 800; color: var(--accent-emerald); margin-bottom: 20px;">
+              $8.50 USD <span style="font-size: 14px; color: var(--text-muted); font-weight: normal;">(Aprox. S/ 32 soles)</span>
+            </p>
 
-      <div class="guarantee">
-        🔒 Descarga segura instantánea • Garantía de satisfacción 100%
+            <a href="https://app.hotmart.com" target="_blank" class="cta-btn cta-card" id="hotmart-link">
+              <span>💳 Pagar con Tarjeta vía Checkout Seguro (Hotmart)</span>
+            </a>
+
+            <p style="font-size: 12px; color: var(--text-dim); margin-top: 15px;">
+              Aceptamos Visa, Mastercard, American Express, Diners y PagoEfectivo. Acceso instantáneo por correo electrónico.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
+
+    <!-- PRUEBA SOCIAL / TESTIMONIOS -->
+    <div class="testimonials-section">
+      <h3 class="section-heading">Lo que dicen emprendedores que ya importan con la guía</h3>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Traje mi primer lote de smartwatches de Shenzhen usando los prompts de negociación. Me ahorré más de $350 dólares en aranceles porque apliqué el truco del régimen menor a 200 de la guía."</p>
+          <div class="testimonial-author">Carlos M. - Importador de Tecnología</div>
+          <div class="testimonial-city">Lima Norte, Perú</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"La plantilla de cálculo de Ad-Valorem e IGV es oro puro. Antes los couriers me cobraban gastos operativos sorpresa; con esta guía supe exactamente qué exigirles y no pagué ni un sol de más."</p>
+          <div class="testimonial-author">Vanessa R. - Tienda Online de Moda</div>
+          <div class="testimonial-city">Arequipa, Perú</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GARANTÍA -->
+    <div class="guarantee-box">
+      <div class="guarantee-badge">🛡️</div>
+      <h4 class="guarantee-title">Garantía Incondicional de Devolución por 7 Días</h4>
+      <p class="guarantee-desc">
+        Si después de revisar la guía sientes que no te ahorra al menos 10 veces su valor en tu primera cotización en China, escríbenos y te devolvemos el 100% de tu dinero sin preguntas.
+      </p>
+    </div>
+
+    <!-- PREGUNTAS FRECUENTES (FAQ) -->
+    <div class="faq-section">
+      <h3 class="section-heading">Preguntas Frecuentes</h3>
+      
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">
+          <span>¿Cómo recibo el material una vez hecho el pago?</span>
+          <span class="faq-toggle">▼</span>
+        </div>
+        <div class="faq-answer">
+          Si pagas por Yape/Plin, al enviar tu constancia a nuestro WhatsApp recibirás de inmediato el PDF de alta resolución y el acceso a las plantillas Excel y prompts. Si pagas con tarjeta vía Hotmart, el acceso te llega en segundos a tu correo.
+        </div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">
+          <span>¿Necesito tener RUC 10 o RUC 20 para empezar?</span>
+          <span class="faq-toggle">▼</span>
+        </div>
+        <div class="faq-answer">
+          No necesariamente. En el Capítulo 3 explicamos cómo puedes importar legalmente hasta 3 veces al año con tu DNI para montos menores a $1,000 USD, y cuándo te conviene activar tu RUC 10 o 20 sin pagar contadores costosos.
+        </div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">
+          <span>¿Funciona para importaciones pequeñas de poco capital?</span>
+          <span class="faq-toggle">▼</span>
+        </div>
+        <div class="faq-answer">
+          Absolutamente. La guía está especialmente diseñada para empezar desde $50 o $100 USD en muestras y productos tendencia vía courier aéreo, escalando luego a contenedores marítimos en el Callao.
+        </div>
+      </div>
+    </div>
+
   </div>
-</div>
 
-<script>
-  const tabYape = document.getElementById('tab-yape');
-  const tabCard = document.getElementById('tab-card');
-  const viewYape = document.getElementById('view-yape');
-  const viewCard = document.getElementById('view-card');
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 OmniMonetize OS • Todos los derechos reservados.</p>
+    <p style="margin-top: 5px;">Este producto tiene fines educativos e informativos sobre comercio exterior y tecnología. No promete enriquecimiento rápido sin trabajo.</p>
+  </footer>
 
-  tabYape.addEventListener('click', () => {
-    tabYape.classList.add('active');
-    tabCard.classList.remove('active');
-    viewYape.style.display = 'block';
-    viewCard.style.display = 'none';
-  });
+  <!-- BARRA FLOTANTE MÓVIL (STICKY BAR) -->
+  <div class="mobile-sticky-bar">
+    <div>
+      <div class="sticky-price">S/ 29.00 PEN</div>
+      <div class="sticky-sub">Descarga inmediata en PDF</div>
+    </div>
+    <a href="#compra" class="sticky-btn">Comprar Ahora</a>
+  </div>
 
-  tabCard.addEventListener('click', () => {
-    tabCard.classList.add('active');
-    tabYape.classList.remove('active');
-    viewYape.style.display = 'none';
-    viewCard.style.display = 'block';
-  });
-</script>
+  <script>
+    // Reloj con cuenta regresiva
+    let time = 14 * 60 + 28;
+    const timerEl = document.getElementById('timer');
+    setInterval(() => {
+      if (time > 0) {
+        time--;
+        const mins = Math.floor(time / 60);
+        const secs = time % 60;
+        timerEl.textContent = `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+      }
+    }, 1000);
+
+    // Cambio de pestañas
+    function switchTab(tab) {
+      const btnYape = document.getElementById('btn-tab-yape');
+      const btnCard = document.getElementById('btn-tab-card');
+      const contentYape = document.getElementById('content-yape');
+      const contentCard = document.getElementById('content-card');
+
+      if (tab === 'yape') {
+        btnYape.className = 'tab-btn active-yape';
+        btnCard.className = 'tab-btn';
+        contentYape.className = 'tab-content active';
+        contentCard.className = 'tab-content';
+      } else {
+        btnCard.className = 'tab-btn active-card';
+        btnYape.className = 'tab-btn';
+        contentCard.className = 'tab-content active';
+        contentYape.className = 'tab-content';
+      }
+    }
+
+    // Copiar número de teléfono
+    function copyPhone() {
+      navigator.clipboard.writeText('943284107').then(() => {
+        alert('¡Número 943 284 107 copiado al portapapeles!');
+      });
+    }
+
+    // Toggle FAQ
+    function toggleFaq(el) {
+      el.classList.toggle('open');
+    }
+  </script>
 
 </body>
 </html>
